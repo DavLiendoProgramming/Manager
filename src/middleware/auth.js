@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
     const token = req.header('Authorization').replace('Bearer ', '');
 
     //Verify token and validation (remember token includes id of the user)
-    const decoded = jwt.verify(token, 'signature');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     //Search for user and if it still has the token for it's session
     const user = await User.findOne({

@@ -12,7 +12,7 @@ const Task = require('./models/Task');
 app = express();
 const userRouter = require('./routes/users');
 const taskRouter = require('./routes/tasks');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 //Middleware
 
